@@ -2,7 +2,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const mongoose = require('mongoose');
+const connectDB = require('./config/db');
 
 
 const passport = require('./passport')
@@ -14,11 +14,7 @@ const PORT = 8080 || process.env.PORT;
 
 
 const app = express();
-mongoose.connect('mongodb://localhost/authentication-example', 
-{ 
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+connectDB();
 
 
 
