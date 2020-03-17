@@ -42,7 +42,7 @@ const SignupStrategy = new Strategy({ passReqToCallback: true, usernameField : '
 
                 if (error) { return done(error, null) };
 
-                 delete inserted.password // todo delete the password
+                delete inserted.password // todo delete the password
                 return done(null, inserted);
             });
         });
